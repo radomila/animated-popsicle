@@ -1,0 +1,125 @@
+:root {
+  --color-light-purple: #dec9ff;
+  --color-medium-purple: #9984b9;
+  --color-dark-purple: #634e83;
+  --color-light-blue: #bcc9ff;
+  --color-light-brown: #dbc0a8;
+  --color-dark-brown: #c2ad9a;
+  --color-light-pink: #ffc0d9;
+  --color-grey: #626262;
+  --color-white: #ffffff;
+}
+
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.main-part {
+  width: 85px;
+  height: 160px;
+  border-radius: 20px 20px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: linear-gradient(
+    45deg,
+    var(--color-light-blue),
+    var(--color-light-purple),
+    var(--color-light-pink)
+  );
+}
+
+.shadows {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.shadow {
+  background-color: var(--color-white);
+  border-radius: 50px;
+  width: 5px;
+  height: 40px;
+  padding-bottom: 2px;
+}
+
+.shadow-small {
+  background-color: var(--color-white);
+  width: 5px;
+  height: 10px;
+  border-radius: 50px;
+}
+
+.popsicle-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.groove {
+  width: 10px;
+  height: 90px;
+  background-color: var(--color-medium-purple);
+  border-radius: 10px 10px 5px 5px;
+  box-shadow: 2px 0px var(--color-dark-purple);
+  opacity: 0.1;
+}
+
+.stick {
+  width: 20px;
+  height: 30px;
+  background-color: var(--color-light-brown);
+  border-radius: 0px 0px 30px 30px;
+  box-shadow: 2px 0px var(--color-dark-brown);
+}
+
+.popsicle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-25deg);
+}
+
+@keyframes popsicleMove {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.container {
+  animation: popsicleMove 5s ease-in-out infinite;
+}
+
+@keyframes shadowMove {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(2) rotateX(30deg);
+  }
+  100% {
+    transform: scaleX(1) rotateX(50deg);
+  }
+}
+
+.popsicle-shadow {
+  width: 40px;
+  height: 5px;
+  background-color: var(--color-grey);
+  border-radius: 30px;
+  filter: blur(7px);
+  animation: shadowMove 5s ease-out infinite alternate;
+}
